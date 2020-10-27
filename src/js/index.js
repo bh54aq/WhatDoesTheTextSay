@@ -6,8 +6,10 @@ import DOMPurify from 'dompurify';
 import swal from 'sweetalert'
 
 //import count from './modules/count';
-import * as countChars from './modules/countChars.js'; //counts characters in the string
-import * as countVowels from './modules/countVowels.js'; //counts vowels in the string
+import * as countChars from './modules/countChars.js';        //counts characters in the string
+import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
+import * as countConsonants from './modules/countConsonants.js';   //counts consonants in the string
+
 
 //event handler for analyse button
 document.getElementById("btnAnalyse").addEventListener("click", analyseText);
@@ -32,6 +34,10 @@ function analyseText() {
 
             case "countVowels":
                 showResult(countVowels.render(clean));
+                break;
+
+            case "countConsonants":
+                showResult(countConsonants.render(clean));
                 break;
 
             default:
