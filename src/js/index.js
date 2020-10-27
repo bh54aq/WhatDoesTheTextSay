@@ -9,6 +9,7 @@ import DOMPurify from 'dompurify';
 //import count from './modules/count';
 import * as countChars from './modules/countChars.js';        //counts characters in the string
 import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
+import * as findCoffee from './modules/findCoffee.js';
 
 
 
@@ -38,6 +39,10 @@ function analyseText() {
 
             case "countVowels":
                 showResult(countVowels.render(clean));
+                break;
+
+                case "findCoffee":
+                showResult(findCoffee.render(clean));
                 break;
 
             default:
