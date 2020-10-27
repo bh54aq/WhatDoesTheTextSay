@@ -8,8 +8,10 @@ import swal from 'sweetalert'
 //import count from './modules/count';
 import * as countChars from './modules/countChars.js';        //counts characters in the string
 import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
+import * as reverseText from './modules/reverseText.js';        //reverses text
 import * as countNos from './modules/countNos.js';          //counts numbers in the string
 import * as countConsonants from './modules/countConsonants.js';   //counts consonants in the string
+
 
 
 
@@ -36,6 +38,10 @@ function analyseText() {
 
             case "countVowels":
                 showResult(countVowels.render(clean));
+                break;
+            
+            case "reverseText":
+                showResult(reverseText.render(clean));
                 break;
 
 
