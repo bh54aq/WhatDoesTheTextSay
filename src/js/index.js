@@ -9,6 +9,7 @@ import DOMPurify from 'dompurify';
 //import count from './modules/count';
 import * as countChars from './modules/countChars.js';        //counts characters in the string
 import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
+import * as reverseText from './modules/reverseText.js';        //reverses text
 
 
 
@@ -38,6 +39,10 @@ function analyseText() {
 
             case "countVowels":
                 showResult(countVowels.render(clean));
+                break;
+            
+            case "reverseText":
+                showResult(reverseText.render(clean));
                 break;
 
             default:
