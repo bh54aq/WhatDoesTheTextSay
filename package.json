@@ -6,7 +6,8 @@
   "dependencies": {
     "dompurify": "^2.2.0",
     "modules": "^0.4.0",
-    "mustard-ui": "^1.0.4"
+    "mustard-ui": "^1.0.4",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
