@@ -1,23 +1,20 @@
-console.log('hello again.. ');
+console.log('hello again..');
 
 //index.js
 import "mustard-ui";
 import DOMPurify from 'dompurify';
-
-
+import swal from 'sweetalert'
 
 //import count from './modules/count';
 import * as countChars from './modules/countChars.js';        //counts characters in the string
 import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
 import * as countNos from './modules/countNos.js';          //counts numbers in the string
+import * as countConsonants from './modules/countConsonants.js';   //counts consonants in the string
 
 
 
-//event handler for analyse button 
+//event handler for analyse button
 document.getElementById("btnAnalyse").addEventListener("click", analyseText);
-
-
-
 
 function analyseText() {
 
@@ -31,7 +28,7 @@ function analyseText() {
         const key = DOMPurify.sanitize((document.getElementById("myList").value));
 
 
-        //make a call to the approporiate module 
+        //make a call to the appropriate module
         switch (key) {
             case "countChars":
                 showResult(countChars.render(clean));
@@ -41,30 +38,28 @@ function analyseText() {
                 showResult(countVowels.render(clean));
                 break;
 
+
             case "countNos":
                 showResult(countNos.render(clean));
-                break;
+                break
+
+            case "countConsonants":
+                showResult(countConsonants.render(clean));
+                 break;
 
             default:
+                swal("You forgot something", "Choose one option from the dropdown menu to continue", "warning");
                 break;
         }
 
- 
-
     } else {
-        alert('Enter some text');
+        swal("You forgot something", "Enter some text to continue", "warning");
     }
 
 }
 
-
-
- 
-
-
-
-//displays the output of the anlyse function into 'result' div
+//displays the output of the analyse function into 'result' div
 function showResult(dirty) {
     let clean = DOMPurify.sanitize(dirty);
     document.getElementById("result").innerHTML = clean;
-} 
+}
