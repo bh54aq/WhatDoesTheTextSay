@@ -8,7 +8,9 @@ import swal from 'sweetalert'
 //import count from './modules/count';
 import * as countChars from './modules/countChars.js';        //counts characters in the string
 import * as countVowels from './modules/countVowels.js';        //counts vowels in the string
+import * as countNos from './modules/countNos.js';          //counts numbers in the string
 import * as countConsonants from './modules/countConsonants.js';   //counts consonants in the string
+
 
 
 //event handler for analyse button
@@ -36,9 +38,14 @@ function analyseText() {
                 showResult(countVowels.render(clean));
                 break;
 
+
+            case "countNos":
+                showResult(countNos.render(clean));
+                break
+
             case "countConsonants":
                 showResult(countConsonants.render(clean));
-                break;
+                 break;
 
             default:
                 swal("You forgot something", "Choose one option from the dropdown menu to continue", "warning");
